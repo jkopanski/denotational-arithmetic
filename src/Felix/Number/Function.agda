@@ -27,29 +27,38 @@ LInt = Lift ℓ Int.ℤ
 LRational : Set ℓ
 LRational = Lift ℓ R.ℚ
 
-natural : Natural (Set ℓ)
-natural = record { ℕ = LNat }
-
-integer : Integer (Set ℓ)
-integer = record { ℤ = LInt }
-
-rational : Rational (Set ℓ)
-rational = record { ℚ = LRational }
-
 module natural-function-instances where instance
+  natural : Natural (Set ℓ)
+  natural = record { ℕ = LNat }
+
   open import Felix.Structures.Magma (Natural.ℕ natural)
 
   addition : Magma _⇾_
   addition = record { ∙ = lift₂ (Nat._+_) }
 
+  multiplication : Magma _⇾_
+  multiplication = record { ∙ = lift₂ Nat._*_ }
+
 module integer-function-instances where instance
+  integer : Integer (Set ℓ)
+  integer = record { ℤ = LInt }
+
   open import Felix.Structures.Magma (Integer.ℤ integer)
 
   addition : Magma _⇾_
   addition = record { ∙ = lift₂ (Int._+_) }
 
+  multiplication : Magma _⇾_
+  multiplication = record { ∙ = lift₂ Int._*_ }
+
 module rational-function-instances where instance
+  rational : Rational (Set ℓ)
+  rational = record { ℚ = LRational }
+
   open import Felix.Structures.Magma (Rational.ℚ rational)
 
   addition : Magma _⇾_
   addition = record { ∙ = lift₂ (R._+_) }
+
+  multiplication : Magma _⇾_
+  multiplication = record { ∙ = lift₂ R._*_ }
