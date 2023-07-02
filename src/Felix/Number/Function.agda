@@ -33,11 +33,11 @@ module natural-function-instances where instance
 
   open import Felix.Structures.Magma (Natural.ℕ natural)
 
-  addition : Magma _⇾_
-  addition = record { ∙ = lift₂ (Nat._+_) }
+  +-magma : Magma _⇾_
+  +-magma = record { ∙ = lift₂ (Nat._+_) }
 
-  multiplication : Magma _⇾_
-  multiplication = record { ∙ = lift₂ Nat._*_ }
+  *-magma : Magma _⇾_
+  *-magma = record { ∙ = lift₂ Nat._*_ }
 
 module integer-function-instances where instance
   integer : Integer (Set ℓ)
@@ -45,11 +45,11 @@ module integer-function-instances where instance
 
   open import Felix.Structures.Magma (Integer.ℤ integer)
 
-  addition : Magma _⇾_
-  addition = record { ∙ = lift₂ (Int._+_) }
+  +-magma : Magma _⇾_
+  +-magma = record { ∙ = lift₂ (Int._+_) }
 
-  multiplication : Magma _⇾_
-  multiplication = record { ∙ = lift₂ Int._*_ }
+  *-magma : Magma _⇾_
+  *-magma = record { ∙ = lift₂ Int._*_ }
 
 module rational-function-instances where instance
   rational : Rational (Set ℓ)
@@ -57,8 +57,8 @@ module rational-function-instances where instance
 
   open import Felix.Structures.Magma (Rational.ℚ rational)
 
-  addition : Magma _⇾_
-  addition = record { ∙ = lift₂ (R._+_) }
+  +-magma : Magma _⇾_
+  +-magma = record { ∙ = lift₂ (R._+_) }
 
-  multiplication : Magma _⇾_
-  multiplication = record { ∙ = lift₂ R._*_ }
+  *-magma : Magma _⇾_
+  *-magma = record { ∙ = lift₂ R._*_ }
