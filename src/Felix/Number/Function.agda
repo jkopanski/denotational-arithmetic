@@ -16,49 +16,20 @@ open import Felix.Instances.Function.Lift 0ℓ ℓ
   using (lift₂)
 
 open import Felix.Number
-  using (Natural; Integer; Rational)
+  using (Natural)
 
 LNat : Set ℓ
 LNat = Lift ℓ Nat.ℕ
-
-LInt : Set ℓ
-LInt = Lift ℓ Int.ℤ
-
-LRational : Set ℓ
-LRational = Lift ℓ R.ℚ
 
 module natural-function-instances where instance
   natural : Natural (Set ℓ)
   natural = record { ℕ = LNat }
 
-  open import Felix.Structures.Magma (Natural.ℕ natural)
+  open import Felix.Bundles.Raw
+    using (Magma)
 
   +-magma : Magma _⇾_
-  +-magma = record { ∙ = lift₂ (Nat._+_) }
+  +-magma = record { ⟨∙⟩ = lift₂ Nat._+_ }
 
   *-magma : Magma _⇾_
-  *-magma = record { ∙ = lift₂ Nat._*_ }
-
-module integer-function-instances where instance
-  integer : Integer (Set ℓ)
-  integer = record { ℤ = LInt }
-
-  open import Felix.Structures.Magma (Integer.ℤ integer)
-
-  +-magma : Magma _⇾_
-  +-magma = record { ∙ = lift₂ (Int._+_) }
-
-  *-magma : Magma _⇾_
-  *-magma = record { ∙ = lift₂ Int._*_ }
-
-module rational-function-instances where instance
-  rational : Rational (Set ℓ)
-  rational = record { ℚ = LRational }
-
-  open import Felix.Structures.Magma (Rational.ℚ rational)
-
-  +-magma : Magma _⇾_
-  +-magma = record { ∙ = lift₂ (R._+_) }
-
-  *-magma : Magma _⇾_
-  *-magma = record { ∙ = lift₂ R._*_ }
+  *-magma = record { ⟨∙⟩ = lift₂ Nat._*_ }
