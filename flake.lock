@@ -34,11 +34,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1689441726,
-        "narHash": "sha256-h6nhim8XYEqNwCzIPpeOV47/Ucd8gkEMSJLMCLwsSzc=",
+        "lastModified": 1690451230,
+        "narHash": "sha256-6bNDphVPUIuaGZ6xZNeDJF0OKoOGHENQqJlO7WLU2OA=",
         "owner": "jkopanski",
         "repo": "felix",
-        "rev": "f5cc89069e6c198be294f1ea881017ba6aa8c763",
+        "rev": "54d6c8c12a0c5261c2aec49030e8f56ebeb6383b",
         "type": "github"
       },
       "original": {
